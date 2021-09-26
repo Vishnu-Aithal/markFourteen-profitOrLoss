@@ -42,7 +42,7 @@ function calcProfitOrLoss(currentPrice, buyingPrice, quantity) {
             absolute: absProfit,
             percentage: profitPercentage.toFixed(2)
         }
-    } else {
+    } else if (currentPrice < buyingPrice) {
         var loss = buyingPrice - currentPrice;
         var absLoss = (loss)*quantity;
         var lossPercentage = loss/buyingPrice*100;
@@ -51,6 +51,9 @@ function calcProfitOrLoss(currentPrice, buyingPrice, quantity) {
             absolute: absLoss,
             percentage: lossPercentage.toFixed(2)
         }
+    } else {
+        output.style.display = "block"; 
+        output.innerText = "Your Stock has not moved";
     }
 }
 
@@ -58,11 +61,11 @@ function displayOutput(result){
     if (result.status==="profit"){
         display.style.backgroundColor = greenColor;
         output.style.display = "block"; 
-        output.innerText = `The profit is ${result.absolute} and the percentage is ${result.percentage}`;
+        output.innerText = `The profit is ${result.absolute} and the percentage is ${result.percentage}%`;
     } else  {
         display.style.backgroundColor = redColor;
         output.style.display = "block";
-        output.innerText = `The loss is ${result.absolute} and the percentage is ${result.percentage}`;
+        output.innerText = `The loss is ${result.absolute} and the percentage is ${result.percentage}%`;
     }
 }
 
