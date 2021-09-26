@@ -15,6 +15,41 @@ body {
     text-align: center;
 }
 
+input,
+button{
+    display: block;
+    margin:1rem auto 2rem;
+    width:20rem;
+    max-width:80vw;
+    font-size: large;
+    font-weight: bold;
+    border: solid 3px var(--secondary-color);
+    border-radius: 0.5rem;
+    height: 2rem;
+}
+label, .output{
+    font-size: large;
+    font-weight: bold;
+}
+button{
+    height: auto;
+    width: auto;
+    padding:0.5rem 2rem;
+    background-color: var(--secondary-color);
+    color: black;
+    border-color: var(--primary-color);
+}
+button:disabled{
+    background-color: white;
+}
+
+.output{
+    border: solid 2px var(--secondary-color);
+    width: 70vw;
+    margin:auto;
+    padding: 0.5rem;
+    border-radius:1rem;
+}
 .header {
     background-color: var(--primary-color);
     margin-top: 0;
