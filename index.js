@@ -22,15 +22,15 @@ allInputs.forEach((input) => {
             }
         } else {
             event.target.value = event.target.previousValidInput;
-            checkBtn.disabled = true;
+            // checkBtn.disabled = true;
         }
     })
 })
 
 function allIinputsEntered() {
     var entries = []
-    allInputs.forEach((input) => entries.push(input.value))
-    return (entries.includes("") ? false : true)
+    allInputs.forEach((input) => entries.push(Number(input.value)))
+    return (entries.includes(0) ? false : true)
 }
 
 function calcProfitOrLoss(currentPrice, buyingPrice, quantity) {
