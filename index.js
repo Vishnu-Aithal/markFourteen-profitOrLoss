@@ -14,13 +14,14 @@ allInputs.forEach((input) => {
         output.style.display = "none";
         display.style.backgroundColor = defaultColor ;
         if (event.target.validity.valid) {
+            event.target.previousValidInput = event.target.value
             if (allIinputsEntered()) {
                 checkBtn.disabled = false;
             } else {
                 checkBtn.disabled = true
             }
         } else {
-            event.target.value = "";
+            event.target.value = event.target.previousValidInput;
             checkBtn.disabled = true;
         }
     })
