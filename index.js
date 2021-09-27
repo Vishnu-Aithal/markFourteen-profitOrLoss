@@ -11,8 +11,10 @@ var defaultColor = "#F3F4F6";
 
 allInputs.forEach((input) => {
     input.oninput = ((event) => {
+        if (event.target != quantityInput){
         output.style.display = "none";
         display.style.backgroundColor = defaultColor ;
+        }
         if (event.target.validity.valid) {
             event.target.previousValidInput = event.target.value
             if (allIinputsEntered()) {
