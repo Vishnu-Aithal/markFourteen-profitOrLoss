@@ -40,7 +40,7 @@ function calcProfitOrLoss(currentPrice, buyingPrice, quantity) {
         var profitPercentage = profit / buyingPrice * 100
         return {
             status: "profit",
-            absolute: absProfit,
+            absolute: absProfit.toFixed(2),
             percentage: profitPercentage.toFixed(2)
         }
     } else if (currentPrice < buyingPrice) {
@@ -49,7 +49,7 @@ function calcProfitOrLoss(currentPrice, buyingPrice, quantity) {
         var lossPercentage = loss/buyingPrice*100;
         return {
             status: "loss",
-            absolute: absLoss,
+            absolute: absLoss.toFixed(2),
             percentage: lossPercentage.toFixed(2)
         }
     } else {
