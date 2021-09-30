@@ -40,6 +40,10 @@ label, .output{
     font-size: large;
     font-weight: bold;
 }
+input::placeholder{
+    font-size: medium;
+    font-weight: normal;
+}
 button{
     height: auto;
     width: auto;
