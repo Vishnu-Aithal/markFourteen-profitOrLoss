@@ -57,6 +57,7 @@ function calcProfitOrLoss(currentPrice, buyingPrice, quantity) {
     } else {
         output.style.display = "block"; 
         output.innerText = "Your Stock has not moved";
+        return false;
     }
 }
 
@@ -78,8 +79,7 @@ function submitHandler(){
     var quantity = Number(quantityInput.value);
     console.log(currentPrice, buyingPrice, quantity)
     var result = calcProfitOrLoss(currentPrice, buyingPrice, quantity);
-
-    displayOutput(result)
+    if (result) displayOutput(result);
 
 }
 
