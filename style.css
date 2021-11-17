@@ -51,6 +51,11 @@ button{
     background-color: var(--secondary-color);
     color: black;
     border-color: var(--primary-color);
+    transition: border-color 0.2s  ;
+}
+button:enabled:hover{
+    border-color: var(--secondary-color);
+    
 }
 button:disabled{
     background-color: white;
